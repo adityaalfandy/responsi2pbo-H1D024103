@@ -1,0 +1,18 @@
+[PERTANYAAN PENGAYAAN]
+
+1. Mengapa constructor di class Member wajib memanggil constructor Customer menggunakan super(...)?
+
+2. Apa tujuan memanggil super.tampilkanInfo() saat melakukan overriding method di subclass?
+
+3. Berikan contoh kondisi di mana pemanggilan super.method() sangat penting dalam pewarisan.
+
+4. Bagaimana keyword super membantu membedakan atribut yang memiliki nama sama antara parent dan child?
+
+5. Mengapa pendekatan inheritance lebih efisien dibanding menyalin ulang seluruh atribut dan method ke dalam class Member?
+
+Jawaban
+1. Ketika sebuah objek Member (subclass) diinstansiasi, objek tersebut sebenarnya mengandung atribut-atribut milik Customer (superclass) seperti nama, id, dan totalBelanja. Karena atribut-atribut tersebut didefinisikan di dalam kelas Customer, maka harus menginisialisasinya (memberi nilai awal) berada pada konstruktor Customer.
+2. Tujuan super.tampilkanInfo() pada Overriding Bertujuan untuk menerapkan prinsip efisiensi kode (code reuse) dan ekstensi fungsional. Dengan memanggil metode induk, sistem memanfaatkan kembali logika dasar yang sudah valid, sehingga subclass cukup fokus pada penambahan logika spesifik tanpa duplikasi kode.
+3. Contoh Kondisi Krusial super.method() Sangat krusial dalam operasi yang bersifat sekuensial dan dependensi, seperti koneksi database. Metode turunan wajib memanggil metode induk untuk membuka koneksi dasar terlebih dahulu sebelum dapat menyimpan data tambahan spesifik.
+4. Peran super dalam Konflik Nama Atribut Berfungsi sebagai resolusi lingkup (scope resolution) saat terjadi variable shadowing (nama variabel sama). super memberikan referensi eksplisit ke atribut milik superclass, membedakannya dari atribut lokal subclass (this) agar tidak terjadi ambiguitas data.
+5. Inheritance lebih efisien karena menerapkan sentralisasi logika dan optimasi memori. Definisi kode hanya dimuat satu kali oleh sistem dan perubahan pada induk otomatis terpropagasi ke seluruh turunan, berbeda dengan duplikasi manual yang boros memori dan rentan kesalahan perawatan.

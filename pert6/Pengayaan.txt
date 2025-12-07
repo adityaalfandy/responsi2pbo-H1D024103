@@ -1,0 +1,17 @@
+Pertanyaan Refleksi
+Setelah menyelesaikan kode, jawab pertanyaan berikut:
+
+1. Apa itu abstract class dan Kenapa kita membutuhkan Abstarct class?
+2. Apa perbedaan utama antara abstract class dan class biasa dalam pemrograman berorientasi objek? 
+3. Mengapa subclass wajib mengimplementasikan semua abstract method dari parent class?
+4. Mengapa abstract method tidak boleh memiliki isi implementasi di dalam abstract class?
+5. Bagaimana abstract class dapat mendukung konsep polimorfisme, dan mengapa objek yang direferensikan melalui tipe abstract class tetap dapat menjalankan perilaku berbeda pada masing-masing subclass?
+
+Jawaban
+1. Abstract class adalah kelas yang tidak dapat diinstansiasi (dibuat objeknya secara langsung) dan berfungsi sebagai kerangka dasar (template) bagi kelas-kelas turunannya. Dibutuhkan untuk mendefinisikan karakteristik umum (atribut dan metode) yang dimiliki oleh sekelompok objek, namun membiarkan detail implementasi spesifik diatur oleh masing-masing subclass. Ini menghindari duplikasi kode dan memaksakan struktur standar.
+2. Perbedaam utamanya
+   Instansiasi: Class biasa dapat dibuat objeknya (new ClassBiasa()), sedangkan abstract class tidak bisa (new AbstractClass() akan error).
+   Method: Abstract class boleh memiliki abstract method (method tanpa body), sedangkan class biasa semua methodnya harus memiliki implementasi (body).
+3. Karena abstract method adalah sebuah kontrak atau janji. Parent class hanya mendefinisikan apa yang harus bisa dilakukan (misalnya: jelajah), tetapi tidak tahu "bagaimana" caranya. Oleh karena itu, subclass (yang merupakan kelas konkret) wajib menyediakan logika detail ("bagaimana") agar program bisa berjalan tanpa error. Jika tidak diimplementasi, subclass tersebut harus menjadi abstract class juga.
+4. Karena tujuan dari abstract method adalah untuk di-override. Jika parent class memberikan implementasi, maka konsep abstraksi menjadi rancu. Logika implementasi seringkali sangat spesifik untuk setiap subclass (contoh: cara PesawatTempur terbang berbeda dengan KapalEksplorasi), sehingga tidak mungkin ditulis satu kode yang cocok untuk semua di level parent.
+5. Abstract class mendukung polimorfisme dengan memungkinkan kita menggunakan tipe referensi Parent (Abstract Class) untuk menampung objek Subclass. Contoh: KendaraanGalaksi k = new PesawatTempur();. Saat kita memanggil method seperti k.jelajah(), program secara otomatis menjalankan versi method milik PesawatTempur. Ini memungkinkan kita membuat kode yang fleksibel (seperti ArrayList<KendaraanGalaksi>) yang bisa memproses berbagai jenis kendaraan berbeda dengan cara pemanggilan method yang seragam.

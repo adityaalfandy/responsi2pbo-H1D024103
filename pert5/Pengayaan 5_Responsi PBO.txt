@@ -1,0 +1,14 @@
+﻿SOAL PENGAYAAN (Refleksi Polimorfisme)
+Jawablah pertanyaan berikut:
+1. Apa yang dimaksud dengan polimorfisme dalam OOP? Jelaskan bagaimana metode override bekerja.
+2. Mengapa array bertipe DefaultMesin dapat menyimpan objek MesinMotor dan MesinTraktor?
+3. Apa perbedaan override dan overload?
+4. Apa keuntungan menggunakan polimorfisme dalam sistem inventaris seperti contoh di atas?
+5. Bagaimana cara kerja dynamic dispatch pada Java saat memanggil method override?
+Jawaban:
+1. Polimorfisme adalah prinsip dalam OOP yang memungkinkan objek dari kelas turunan yang berbeda diperlakukan sebagai objek dari kelas induk yang sama, sehingga satu antarmuka dapat merepresentasikan berbagai implementasi.
+   Method overriding bekerja ketika subclass mendefinisikan ulang metode yang sudah ada pada superclass dengan signatur (nama dan parameter) yang identik, untuk memberikan perilaku spesifik yang berbeda dari implementasi default induknya.
+2. Hal ini dimungkinkan karena prinsip inheritance (pewarisan) dan hubungan is-a. Karena mesinMotor dan mesinTraktor dideklarasikan sebagai turunan (extends) dari defaultMesin, maka secara polimorfis, referensi bertipe superclass (defaultMesin) valid untuk menyimpan referensi ke objek subclass-nya (upcasting).
+3. Override terjadi antar kelas dalam hierarki pewarisan di mana metode memiliki nama dan parameter yang sama persis untuk menggantikan perilaku metode induk. Sebaliknya, overload umumnya terjadi dalam satu kelas di mana nama metode sama tetapi memiliki daftar parameter (jumlah atau tipe data) yang berbeda, dan tidak memerlukan pewarisan.
+4. Polimorfisme meningkatkan fleksibilitas dan scalability kode. Logika program utama (seperti loop dalam analisisMesin) dapat memproses berbagai jenis mesin secara seragam melalui referensi defaultMesin tanpa perlu menulis logika percabangan yang kompleks untuk setiap tipe mesin baru, memudahkan pemeliharaan dan ekspansi sistem.
+5. Dynamic dispatch (atau late binding) adalah mekanisme di mana Java Virtual Machine (JVM) menentukan implementasi metode mana yang dieksekusi pada saat runtime. JVM melihat tipe objek yang sebenarnya (aktual) di memori, bukan tipe variabel referensinya, sehingga metode yang dipanggil adalah versi yang telah di-override oleh subclass yang relevan.

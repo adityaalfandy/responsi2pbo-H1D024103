@@ -1,0 +1,22 @@
+Pertanyaan Refleksi
+Setelah menyelesaikan kode, jawab pertanyaan berikut:
+
+Apa yang dimaksud dengan constructor overloading dalam pemrograman berorientasi objek?
+Bagaimana cara Java membedakan constructor yang memiliki nama sama namun parameter berbeda?
+Apa perbedaan antara mengakses variabel secara langsung (misalnya: objek.variabel = nilai) dengan menggunakan method setter?
+Jelaskan konsep encapsulation dan bagaimana method dapat membantu melindungi data dalam sebuah class!
+Mengapa constructor tidak memiliki return type, bahkan tidak menggunakan kata kunci void?
+
+Jawaban
+1. Constructor overloading adalah sebuah mekanisme polimorfisme statis dalam pemrograman berorientasi objek di mana sebuah kelas memiliki lebih dari satu konstruktor dengan nama yang sama, namun memiliki daftar parameter (parameter list) yang berbeda.
+2. Java membedakan konstruktor-konstruktor yang memiliki nama sama melalui tanda tangan metode (method signature). Compiler Java menganalisis argumen yang dikirimkan saat pembuatan objek (new ClassName(...)) dan mencocokkannya dengan definisi konstruktor berdasarkan tiga aspek:
+   Jumlah Parameter: Apakah argumen yang dikirim berjumlah satu, dua, atau lebih.
+   Tipe Data Parameter: Apakah argumen tersebut bertipe int, String, atau double.
+   Urutan Tipe Data: Urutan penempatan tipe data dalam parameter.
+3. Perbedaan fundamental terletak pada kontrol akses dan validasi data:
+   Akses Langsung (objek.variabel = nilai): Melanggar prinsip enkapsulasi karena pihak luar dapat mengubah nilai internal objek secara bebas tanpa batasan. Hal ini berisiko menyebabkan invalid state (keadaan data tidak valid), misalnya memasukkan harga negatif atau stok minus.
+   Menggunakan Method Setter (objek.setVariabel(nilai)): Memberikan lapisan abstraksi yang memungkinkan programmer menyisipkan logika validasi sebelum data disimpan. Variabel hanya akan berubah jika nilai yang dimasukkan memenuhi syarat yang ditentukan dalam method tersebut.
+4. Enkapsulasi (Encapsulation) adalah konsep pembungkusan data (variabel) dan metode yang mengoperasikannya menjadi satu unit tunggal (kelas), sekaligus menyembunyikan detail implementasi internal dari akses luar yang tidak sah (information hiding).
+   Method membantu melindungi data dengan cara bertindak sebagai "gerbang" akses. Variabel internal biasanya dideklarasikan sebagai private (tertutup), dan akses hanya diberikan melalui method public (seperti setter atau method modifikasi lain).
+5. Konstruktor tidak memiliki return type (bahkan void) karena tujuan eksistensinya berbeda dengan method biasa.
+   Tujuan utama konstruktor adalah untuk menginisialisasi alokasi memori bagi objek baru. Secara implisit, konstruktor sebenarnya mengembalikan referensi dari instance (wujud objek) kelas itu sendiri yang baru saja dibuat di memori heap. Jika konstruktor diberi return type, Java akan menganggapnya sebagai method biasa, bukan sebagai inisiator objek, yang akan menggagalkan proses pembuatan objek tersebut.

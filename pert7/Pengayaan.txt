@@ -1,0 +1,23 @@
+Pertanyaan Refleksi
+Setelah menyelesaikan kode, jawab pertanyaan berikut:
+
+1. Apa perbedaan antara interface dengan class biasa?
+2. Mengapa interface tidak memiliki implementasi method di dalamnya?
+3. Apa tujuan penggunaan keyword "implements" pada sebuah class?
+4. Apakah sebuah class dapat mengimplementasikan lebih dari satu interface? Jelaskan dan berikan contoh sederhana.
+5. Jika sebuah class mengimplementasikan interface, apa yang terjadi jika class tersebut tidak mengimplementasikan semua method dari interface tersebut?
+
+Jawaban
+1. Class biasa berisi implementasi nyata dari method (kode logika) dan memiliki atribut instance. Class digunakan untuk mendefinisikan objek nyata.
+   Interface hanya berisi deklarasi method (abstract) tanpa body/implementasi (sebelum Java 8) dan konstanta (static final). Interface digunakan sebagai kontrak atau kerangka kerja yang harus dipatuhi oleh class yang mengimplementasikannya.
+2. Interface dirancang sebagai "blueprint" atau kontrak perilaku murni. Tujuannya adalah untuk mendefinisikan apa yang bisa dilakukan oleh objek, bukan bagaimana caranya (abstraksi penuh).
+3. Keyword implements digunakan untuk menyatakan bahwa sebuah class berjanji untuk memenuhi kontrak yang didefinisikan oleh interface. Ini berarti class tersebut wajib menuliskan ulang (override) dan memberikan isi logika pada semua method abstract yang ada di interface tersebut.
+4. Bisa. Java tidak mendukung multiple inheritance untuk class (extends), tetapi mendukung multiple implementation untuk interface. Sebuah class bisa mengadopsi perilaku dari banyak interface sekaligus. Contoh:
+   interface BisaJalan { void jalan(); }
+   interface BisaMakan { void makan(); }
+
+   class Manusia implements BisaJalan, BisaMakan {
+       public void jalan() { ... }
+       public void makan() { ... }
+   }
+5. Jika class tersebut tidak mengimplementasikan (override) semua method dari interface, maka class tersebut akan dianggap belum lengkap. Akibatnya, class tersebut harus dideklarasikan sebagai abstract class dan tidak bisa dibuat objeknya (instansiasi) secara langsung. Jika tidak dijadikan abstract, program akan mengalami compile error .

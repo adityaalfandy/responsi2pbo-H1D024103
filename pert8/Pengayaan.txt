@@ -1,0 +1,15 @@
+Setelah anda menyelesaikan kode, tolong jawab pertanyaan dibawah ini ya =
+
+
+1. Apa tujuan utama adanya interface dalam pemrograman berorientasi objek, dan bagaimana interface membantu menciptakan kontrak perilaku?
+2. Mengapa interface dapat memiliki banyak implementasi, dan apa makna konseptual dari kemampuan tersebut dalam desain sistem?
+3. Apa perbedaan mendasar antara extends dan implements dalam konteks interface, jika dilihat secara konsep tanpa melihat contoh kode?
+4. Apa alasan diperkenalkannya default method dalam interface, dan bagaimana fitur ini memengaruhi keberlangsungan (compatibility) suatu sistem yang sudah berjalan?
+5. Bagaimana konsep multiple interface memperluas fleksibilitas desain tanpa menimbulkan masalah kompleksitas yang biasa muncul pada multiple inheritance?
+
+Jawaban
+1. Tujuan utama interface adalah menyediakan abstraksi murni yang memisahkan definisi metode dari implementasinya. Interface berfungsi sebagai kontrak perilaku (contract of behavior) karena mewajibkan setiap kelas implementator untuk menyediakan logika konkret bagi seluruh metode abstrak yang didefinisikan, sehingga menjamin konsistensi struktur metode di berbagai kelas yang berbeda.
+2. Interface memungkinkan banyak implementasi untuk mendukung prinsip polimorfisme. Secara konseptual, hal ini bermakna bahwa berbagai objek dapat berbagi "tanda tangan" atau protokol interaksi yang sama namun memiliki perilaku internal (logika bisnis) yang berbeda, meningkatkan fleksibilitas dan reusability dalam desain sistem modular.
+3. extends merepresentasikan hubungan "is-a" (pewarisan hierarkis) di mana subclass mewarisi status (atribut) dan perilaku dari superclass. Sebaliknya, implements merepresentasikan hubungan "can-do" (kapabilitas), di mana kelas berjanji untuk memenuhi kontrak fungsionalitas tertentu tanpa harus mewarisi hierarki kelas yang kaku.
+4. Default method diperkenalkan (sejak Java 8) untuk mendukung kompatibilitas ke belakang (backward compatibility). Fitur ini memungkinkan penambahan metode baru ke dalam interface tanpa mematahkan (breaking) kode pada kelas-kelas yang sudah mengimplementasikan interface tersebut sebelumnya, karena metode baru sudah memiliki implementasi standar.
+5. Konsep multiple interface memperluas fleksibilitas dengan mengizinkan sebuah kelas memiliki beragam peran (tipe) sekaligus tanpa risiko "Diamond Problem" (ambiguitas pewarisan state/atribut) yang biasa terjadi pada multiple inheritance. Ini karena interface tidak menyimpan state (instance variable), sehingga konflik hanya mungkin terjadi pada level metode yang dapat diselesaikan dengan aturan overriding yang eksplisit.

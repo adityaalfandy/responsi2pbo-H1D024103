@@ -1,0 +1,24 @@
+Pertanyaan Refleksi
+Setelah menyelesaikan kode, jawab pertanyaan berikut:
+
+Jelaskan perbedaan antara fungsi (function) dan prosedur (procedure) dalam pemrograman berorientasi objek.
+Mengapa penting menggunakan konstanta (final variables) dalam suatu kelas? Apa keuntungannya?
+Apa yang terjadi jika kita mencoba mengubah nilai suatu konstanta setelah objek dibuat? Berikan contoh.
+Bagaimana cara mendefinisikan konstanta dalam bahasa Java?
+
+Jawaban
+1. Fungsi (function) merupakan sebuah method dalam oop yang mengembalikan sebuah nilai biasanya mengolah data dan menghasilkan jawaban baru. Wajib memiliki kata kunci return di akhir kodenya.
+Contoh di Kode: hitungBMI() dan hitungKalori() adalah fungsi.
+Prosedur (Procedure) merupakan sebuah method yang tidak mengembalikan nilai (hanya melakukan aksi). Melakukan tugas, seperti menampilkan teks ke layar, mengubah warna aplikasi, atau menyimpan data. Tidak memerlukan kata kunci return untuk mengembalikan nilai.
+Contoh di Kode: tampilInfo() dan tampilKategori() adalah prosedur.
+2. Penggunaan konstanta (variabel final) sangat krusial dalam rekayasa perangkat lunak karena memberikan tiga keuntungan utama:
+Integritas Data (Data Integrity): Konstanta menjamin bahwa nilai-nilai kritis (seperti nilai Pi atau faktor konversi standar) bersifat immutable (tidak dapat diubah). Hal ini mencegah terjadinya bug atau kesalahan logika akibat modifikasi nilai yang tidak disengaja oleh bagian kode lain.
+Keterbacaan Kode (Code Readability): Konstanta menggantikan angka-angka literal yang ambigu (magic numbers) dengan nama variabel yang deskriptif (contoh: menggunakan BATAS_BMI alih-alih angka 25.0). Hal ini membuat kode lebih mudah dipahami secara semantik.
+Kemudahan Pemeliharaan (Maintainability): Jika terjadi perubahan pada nilai standar (misalnya perubahan kebijakan medis), pengembang hanya perlu mengubah nilai pada satu baris deklarasi konstanta, tanpa harus mencari dan mengubah angka manual yang tersebar di seluruh kode program.
+3. Apabila terdapat upaya untuk mengubah nilai variabel yang telah dideklarasikan dengan kata kunci final setelah inisialisasi awal, sistem akan merespons dengan kesalahan kompilasi (compile-time error).
+Compiler Java akan menolak kode tersebut dan menampilkan pesan kesalahan seperti "cannot assign a value to final variable". Hal ini terjadi karena memori untuk variabel final dikunci setelah pengisian nilai pertama, sehingga segala bentuk penugasan ulang (reassignment) dianggap sebagai pelanggaran terhadap kontrak immutabilitas variabel tersebut.
+4. Secara teknis, pendefinisian konstanta dalam bahasa Java dilakukan dengan mengikuti kaidah sintaksis dan konvensi berikut:
+Kata Kunci (Keyword): Menggunakan kata kunci final sebelum tipe data. Seringkali dikombinasikan dengan kata kunci static jika konstanta tersebut bersifat global untuk kelas (class-level constant).
+Konvensi Penamaan: Menggunakan format UPPER_SNAKE_CASE (huruf kapital semua dengan pemisah garis bawah) untuk membedakannya dengan variabel biasa.
+Contoh:
+final double faktorAktivitas = 1.2;
