@@ -1,10 +1,8 @@
 public interface AksesSistem {
-    // METHOD ABSTRAK
-    void login(String pin); // [cite: 31]
-    void logout(); // [cite: 31]
+    void login(String pin);
+    void logout();
 
-    // DEFAULT METHOD
     default String getRoleAkses() {
-        return "Staff Biasa"; // [cite: 31]
+        return "Staff Biasa";
     }
 }
