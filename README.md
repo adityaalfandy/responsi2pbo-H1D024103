@@ -2,8 +2,8 @@
 
 **Dibuat oleh:** Aditya Alfandy  
 **NIM:** H1D024103
-**Shift Baru:** D   
-**Shift KRS:** D
+**Shift KRS: D**
+**Shift Baru: D**
 
 ---
 
